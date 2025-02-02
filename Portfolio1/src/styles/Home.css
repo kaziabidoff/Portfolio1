@@ -1,0 +1,99 @@
+.home {
+    text-align: center;
+    background-color: #000;
+    color: white;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  /* Smooth Text Appear Effect */
+  .main-text {
+    font-size: 3rem;
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+  }
+  
+  .main-text.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .sub-text {
+    font-size: 1.5rem;
+    font-weight: 300;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.5s ease-out 0.5s, transform 1.5s ease-out 0.5s;
+  }
+  
+  .sub-text.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Scroll Down Indicator */
+  .scroll-down {
+    position: absolute;
+    bottom: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards 1.5s;
+  }
+  
+  .mouse {
+    width: 35px;
+    height: 55px;
+    border: 2px solid white;
+    border-radius: 25px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .wheel {
+    width: 6px;
+    height: 12px;
+    background: white;
+    border-radius: 6px;
+    animation: scrollAnimation 1.5s infinite ease-in-out;
+  }
+  
+  .scroll-text {
+    margin-top: 10px;
+    font-size: 1rem;
+    opacity: 0.8;
+    letter-spacing: 1px;
+    font-weight: 400;
+  }
+  
+  /* Smoother Animation */
+  @keyframes scrollAnimation {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(15px);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
